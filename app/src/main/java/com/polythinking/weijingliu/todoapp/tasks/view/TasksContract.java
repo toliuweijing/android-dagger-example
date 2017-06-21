@@ -10,7 +10,7 @@ public class TasksContract {
     /**
      * set text to display at center.
      */
-    void setCentralText(String string);
+    void setCenterText(String string);
   }
 
   public interface TasksPresenter {

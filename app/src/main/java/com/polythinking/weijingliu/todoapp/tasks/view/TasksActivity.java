@@ -19,7 +19,7 @@ public class TasksActivity extends AppCompatActivity implements TasksContract.Ta
   @Inject TasksViewPresenter mViewPresenter;
 
   // Subviews
-  private TextView mTextView;
+  private TextView mCenterTextView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +28,19 @@ public class TasksActivity extends AppCompatActivity implements TasksContract.Ta
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    mTextView = (TextView) findViewById(R.id.text_view);
+    mCenterTextView = (TextView) findViewById(R.id.text_view);
 
     mViewPresenter.setView(this);
   }
 
   @Override
-  public void setCentralText(String string) {
-    mTextView.setText(mViewPresenter.getApplicationName());
+  public void setCenterText(String text) {
+    mCenterTextView.setText(text);
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+    mViewPresenter.onStart();
   }
 }

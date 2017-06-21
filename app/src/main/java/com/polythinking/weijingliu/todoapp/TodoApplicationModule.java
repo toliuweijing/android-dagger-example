@@ -1,4 +1,4 @@
-package com.polythinking.weijingliu.todoapp.tasks;
+package com.polythinking.weijingliu.todoapp;
 
 import com.polythinking.weijingliu.todoapp.tasks.view.TasksViewModule;
 
@@ -10,5 +10,5 @@ import dagger.Module;
 @Module(
     includes = TasksViewModule.class
 )
-public class ApplicationModule {
+public class TodoApplicationModule {
 }

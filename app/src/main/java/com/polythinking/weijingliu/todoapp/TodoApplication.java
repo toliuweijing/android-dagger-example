@@ -1,4 +1,4 @@
-package com.polythinking.weijingliu.todoapp.tasks;
+package com.polythinking.weijingliu.todoapp;
 
 import android.app.Activity;
 import android.app.Application;
@@ -22,10 +22,10 @@ public class TodoApplication extends Application implements HasActivityInjector 
     super.onCreate();
 
     // Install modules to the application.
-    ApplicationComponent applicationComponent = DaggerApplicationComponent.builder()
+    TodoApplicationComponent todoApplicationComponent = DaggerTodoApplicationComponent.builder()
         .diModule(new DiModule(this))
         .build();
-    applicationComponent.inject(this);
+    todoApplicationComponent.inject(this);
   }
 
   @Override

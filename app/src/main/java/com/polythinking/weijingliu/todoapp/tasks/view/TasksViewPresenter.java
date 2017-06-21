@@ -3,12 +3,10 @@ package com.polythinking.weijingliu.todoapp.tasks.view;
 import android.content.Context;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  * Controller for tasks view.
  */
-@Singleton
 public class TasksViewPresenter implements TasksContract.TasksPresenter {
 
   private final Context mContext;
@@ -31,6 +29,6 @@ public class TasksViewPresenter implements TasksContract.TasksPresenter {
 
   @Override
   public void onStart() {
-    mTasksView.setCentralText(getApplicationName());
+    mTasksView.setCenterText(getApplicationName());
   }
 }
