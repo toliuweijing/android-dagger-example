@@ -17,7 +17,7 @@ import dagger.multibindings.IntoMap;
  * Module for tasks view
  */
 @Module(includes = DiModule.class)
-public abstract class TasksViewModule {
+public abstract class TasksModule {
 
   /**
    * generate injector for TasksActivity.

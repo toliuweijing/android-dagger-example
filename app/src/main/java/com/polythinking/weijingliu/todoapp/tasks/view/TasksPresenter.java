@@ -7,14 +7,14 @@ import javax.inject.Inject;
 /**
  * Controller for tasks view.
  */
-public class TasksViewPresenter implements TasksContract.TasksPresenter {
+public class TasksPresenter implements TasksContract.TasksPresenter {
 
   private final Context mContext;
 
   private TasksContract.TasksView mTasksView;
 
   @Inject
-  public TasksViewPresenter(Context context) {
+  public TasksPresenter(Context context) {
     mContext = context;
   }
 

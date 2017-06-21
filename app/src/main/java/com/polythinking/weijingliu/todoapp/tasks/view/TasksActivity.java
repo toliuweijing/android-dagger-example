@@ -16,7 +16,7 @@ import dagger.android.AndroidInjection;
 public class TasksActivity extends AppCompatActivity implements TasksContract.TasksView {
 
   // Dependencies
-  @Inject TasksViewPresenter mViewPresenter;
+  @Inject TasksPresenter mViewPresenter;
 
   // Subviews
   private TextView mCenterTextView;

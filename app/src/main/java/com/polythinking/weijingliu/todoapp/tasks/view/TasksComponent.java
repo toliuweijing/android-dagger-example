@@ -5,11 +5,11 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
- * TasksViewComponent
+ * TasksComponent
  */
 @Singleton
-@Component(modules = TasksViewModule.class)
-public interface TasksViewComponent {
+@Component(modules = TasksModule.class)
+public interface TasksComponent {
 
   /**
    * configure TasksActivity to be injectable.
