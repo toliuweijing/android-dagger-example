@@ -4,8 +4,8 @@ This repository showcases an example of using Dagger with minimum code.
 
 Here's the quick tip for starting Dagger.
 
-* You provide Dagger a Module class. It should contain a list of factory methods for each types. Like [DiModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/di/DiModule.java#L23) implements the provider method of Context.
-* You ask Dagger to generate an other list of factory methods via a Component interface. Then you call those methods in real code. Like example [TodoComponent](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationComponent.java#L12) declares an inject(TodoApplication) method which is called here [TodoApplication](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplication.java#L28)
+* You provide Dagger a Module class that has some factory methods. See [DiModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/di/DiModule.java#L23)
+* You ask Dagger to generate some factory methods in a Component interface. Then you use those methods in real code. See [TodoComponent](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationComponent.java#L12) and [TodoApplication](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplication.java#L28)
 * Dagger will interpret your Module class and implement your Component interface. Dagger will emit compile error if she need more information from Module class.
 
 The following steps should help walk you through the simple example.
