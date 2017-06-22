@@ -12,15 +12,15 @@ The following steps should help walk you through the simple example.
 
 **Step 0**, create a project(TodoApp) with empty activity([TasksActivity](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksActivity.java)) using Android Studio.
 
-**Step 1**, read [Dagger documentations](https://github.com/google/dagger#android-gradle) and import both dagger and dagger-android dependencies to build.gradle. See here [app/build.gradle](https://github.com/toliuweijing/android-dagger-example/blob/master/app/build.gradle#L36).
+**Step 1**, read [Dagger documentations](https://github.com/google/dagger#android-gradle) and import dependencies. See here [app/build.gradle](https://github.com/toliuweijing/android-dagger-example/blob/master/app/build.gradle#L36).
 
-**Step 2**, we can define two modules already, [TodoApplicationModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationModule.java) and [TasksModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksModule.java). TodoApplicationModule represents the whole todo application. It can selectedly [install TasksModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationModule.java#L11) to ship along the app. TasksModule represents a single feature. It's independent to any application module so it's reusable to all apps. 
+**Step 2**, we can define two modules already, [TodoApplicationModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationModule.java) and [TasksModule](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksModule.java). 
 
 **Step 3**, create one component for each module. [TodoApplicationComponent](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplicationComponent.java#L12) and [TasksComponent](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksComponent.java)
 
-**Step 4**, let's create a TasksPresenter class and inject it to [TasksActivity](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksActivity.java#L19). This is done by 
-* add @Inject TasksPresenter mTasksPresenter to TasksActivity.
-* add @Inject to TasksPresenter default constructor.
+**Step 4**, let's create a TasksPresenter class and inject it to TasksActivity. This is done by 
+* add @Inject TasksPresenter mTasksPresenter to TasksActivity. See [here](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksActivity.java#L19).
+* add @Inject to TasksPresenter default constructor. See [here](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/tasks/view/TasksPresenter.java)
 
 **Step 5**, then enable activity injection. According to [documentation](https://google.github.io/dagger//android.html), you can enable activity injection by
 * implement HasActivityInjector in Application class. See [here](https://github.com/toliuweijing/android-dagger-example/blob/master/app/src/main/java/com/polythinking/weijingliu/todoapp/TodoApplication.java#L16) 
